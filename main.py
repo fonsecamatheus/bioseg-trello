@@ -1,8 +1,8 @@
-from src.data_archive import DataArchive
 from src.data_extract import DataExtract
 from src.data_load import DataLoad
 from src.data_transform import DataTransform
 from src.http_requester import CardsApi, ListsApi, MembersApi
+from src.data_deletion import DataDeletion
 
 
 def main():
@@ -27,16 +27,11 @@ def main():
     transformer = DataTransform([])
     df = transformer.join_dataframes(df_cards, df_lists, df_members)
     
-    excel = DataLoad(df)
-    excel.upload_data_excel()
-    
-    completeds = DataArchive(cards_list)
-    completeds.archive_cards()
+    loader = DataLoad(df)
+    loader.data_to_excel()
 
-    '''
-        Implementar classe e seu respectivo metodo que executa a exclusao de cartoes ja arquivados
-    '''
-
+    deleter = DataDeletion(cards_list)
+    deleter.deletion_cards()
     
 if __name__ == "__main__":
     main()
