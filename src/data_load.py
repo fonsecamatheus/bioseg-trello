@@ -9,7 +9,7 @@ class DataLoad:
         self.dest = rf'{DEST}'
         self.completed_dest = rf'{DEST_EXCL}'
 
-    def upload_data_excel(self) -> None:
+    def data_to_excel(self) -> None:
         #DATAFRAME CARTÕES CONCLUÍDOS 
         df_completed = self.df[self.df['id_lista'] == f'{LIST_ID}']
    
