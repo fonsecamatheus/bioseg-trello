@@ -17,7 +17,10 @@ while choice not in (1, 2):
 if choice == 1:
     BOARD_ID = os.getenv('BOARD_INDICADORES')
     LIST_ID = os.getenv('LIST_INDICADORES')
+    DEST = os.getenv('DEST_INDICADORES')
+    DEST_EXCL = os.getenv('DEST_EXCL_INDICADORES')
 elif choice == 2:
     BOARD_ID = os.getenv('BOARD_GESTAO')
     LIST_ID = os.getenv('LIST_GESTAO')
-
+    DEST = os.getenv('DEST_GESTAO')
+    DEST_EXCL = os.getenv('DEST_EXCL_GESTAO')
