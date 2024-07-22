@@ -1,8 +1,8 @@
+from src.data_archive import DataArchive
 from src.data_extract import DataExtract
 from src.data_load import DataLoad
 from src.data_transform import DataTransform
 from src.http_requester import CardsApi, ListsApi, MembersApi
-from src.data_deletion import DataDeletion
 
 
 def main():
@@ -30,8 +30,8 @@ def main():
     loader = DataLoad(df)
     loader.data_to_excel()
 
-    deleter = DataDeletion(cards_list)
-    deleter.deletion_cards()
+    archiver = DataArchive(cards_list)
+    archiver.archive_cards()
     
 if __name__ == "__main__":
     main()
